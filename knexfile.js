@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const localPgConnection = {
   host: 'localhost',
   database: 'wunderlist',
