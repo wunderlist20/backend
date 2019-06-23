@@ -12,7 +12,7 @@ server.use(cors());
 
 //server test
 server.get('/', async (req, res) => {
-    res.send(`Welcome to the Wunderlist 2.0 API!`)
+    res.send(`Welcome to the Wunderlist 2.0 API...local to production is working!`)
 });
 
 
