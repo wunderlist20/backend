@@ -2,7 +2,7 @@ const cool = require('cool-ascii-faces');
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
-const todosRouter = require('../router/todosRouter.js');
+const todosRouter = require('../routers/todosRouter.js');
 
 const server = express();
 
