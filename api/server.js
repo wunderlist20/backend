@@ -2,6 +2,7 @@ const cool = require('cool-ascii-faces');
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
+const todosRouter = require('../router/todosRouter.js');
 
 const server = express();
 
@@ -9,6 +10,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
+server.use('/api/todos', todosRouter);
 
 //server test
 server.get('/', async (req, res) => {
