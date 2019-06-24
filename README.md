@@ -21,7 +21,7 @@
 
 ## Endpoints
 
-# Log In and Registration
+### Log In and Registration
 
 
 **POST** /api/auth/register will create a new user and send back a token. Username, password, firstName, lastName are required fields.
@@ -29,7 +29,7 @@
 **POST** /api/auth/login will log the user in, and send back a token. Username and password required.
 
 
-# Todos
+### Todos
 (protected route, requires login)
 
 **GET** https://wunderlist-02.herokuapp.com/api/todos/ will return an array of todos.
@@ -43,7 +43,7 @@
 **PUT** https://wunderlist-02.herokuapp.com/api/todos/:id will edit the todo at this ID, and return the edited object.
 
 
-# Users
+### Users
 (protected route, requires login)
 
 GET  api/users/:id allows a user to view their specific profile by id
@@ -53,4 +53,4 @@ PUT  api/users/:id allows a user to edit their specific profile
 DELETE api/users/:id allows a user to delete their specific profile
 
 
-If you are running the project locally, every endpoint here is the same, but the heroku URL is replaced with `http://localhost:4000/`. For example, `GET` `http://localhost:4000/api/todos` will return an array of todos.
+**If you are running the project locally, every endpoint here is the same, but the heroku URL is replaced with `http://localhost:4000/`. For example, `GET` `http://localhost:4000/api/todos` will return an array of todos.**
