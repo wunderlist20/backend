@@ -8,7 +8,10 @@ POST will create a new user and send back a token. Username, password, firstName
 
 POST will log the user in, and send back a token. Username and password required.
 
+
+
 Todos
+
 GET https://wunderlist-02.herokuapp.com/api/todos/ will return an array of todos.
 
 GET https://wunderlist-02.herokuapp.com/api/todos/:id will return an object corresponding to the todo at that ID.
