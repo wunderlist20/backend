@@ -52,6 +52,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//middleware to generate a secure token
 function generateToken(id, username) {
   const payload = {
     id,
