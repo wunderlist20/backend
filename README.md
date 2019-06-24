@@ -18,3 +18,5 @@ POST https://wunderlist-02.herokuapp.com/api/todos/ will add a new todo, and ret
 DEL https://wunderlist-02.herokuapp.com/api/todos/:id will delete the todo at this ID, and return the deleted object.
 
 PUT https://wunderlist-02.herokuapp.com/api/todos/:id will edit the todo at this ID, and return the edited object.
+
+Users
