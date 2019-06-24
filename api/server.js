@@ -3,6 +3,9 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const todosRouter = require('../routers/todosRouter.js');
+const authRouter = require('../routers/authRouter.js');
+const usersRouter = require('../routers/usersRouter.js');
+const authorization = require('../routers/authorization.js');
 
 const server = express();
 
@@ -10,7 +13,10 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-server.use('/api/todos', todosRouter);
+server.use('/api/todos', authorization, todosRouter); //todos list array 
+server.use('/api/auth', authRouter); //register and login (receive token)
+server.use('/api/users', authorization, usersRouter); //user profile (view, edit, delete)
+
 
 //server test
 server.get('/', async (req, res) => {
