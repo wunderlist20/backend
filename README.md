@@ -26,15 +26,15 @@
 ## Register a new user.
 
     POST /api/auth/register
-
-    ### Parameters
+    
+### Parameters
 
 | Name       | Type   | Description                                              |
 | ---------- | ------ | -------------------------------------------------------- |
 | username   | String | <p>Users username</p>                                       |
 | password   | String | <p>Users password</p>                                    |
 | firstName  | String | <p>Users firstName </p>                                    |
-| lastName   | String | <p>Users lastName </p
+| lastName   | String | <p>Users lastName </p>
 
 **POST** https://wunderlist-02.herokuapp.com/api/auth/register will create a new user and send back a token. Username, password, firstName, lastName are required fields.
 
