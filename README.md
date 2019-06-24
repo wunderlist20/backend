@@ -23,10 +23,108 @@
 
 ### Log In and Registration
 
+## Register a new user.
+
+    POST /api/auth/register
+
+    ### Parameters
+
+| Name       | Type   | Description                                              |
+| ---------- | ------ | -------------------------------------------------------- |
+| username   | String | <p>Users username</p>                                       |
+| password   | String | <p>Users password</p>                                    |
+| firstName  | String | <p>Users firstName </p>                                    |
+| lastName   | String | <p>Users lastName </p
 
 **POST** https://wunderlist-02.herokuapp.com/api/auth/register will create a new user and send back a token. Username, password, firstName, lastName are required fields.
 
+## Examples
+
+Register example:
+
+```
+axios.post('/api/auth/register', {
+    "username": "hermione",
+	"password": "granger",
+	"firstName": "hermione",
+ 	"lastName" : "granger"
+});
+```
+
+### Success Response
+
+Register Success
+
+```
+
+ {
+    "message": "Welcome hermione!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInVzZXJuYW1lIjoiaGVybWlvbmUiLCJpYXQiOjE1NjE0MTU1ODQsImV4cCI6MTU2MjAyMDM4NH0.LQLEDiljVklxF4gZOyNlLJ6SZuM7509Ko5rK_Ql2X4w",
+    "userID": 33
+}
+```
+
+### Error Response
+
+Error Example:
+
+```
+ERROR 500
+{
+    "status": 500,
+    "message": "Your use could not be created ${error}."
+}
+```
+
+## Log a user in.
+
+    POST /api/auth/login
+
+### Parameters
+
+| Name     | Type   | Description                |
+| -------- | ------ | -------------------------- |
+| username | String | <p>Users username</p> |
+| password | String | <p>Users password</p>      |
+
+
 **POST** https://wunderlist-02.herokuapp.com/api/auth/login will log the user in, and send back a token. Username and password required.
+
+### Examples
+
+Login example:
+
+```
+axios.post('/api//auth/login', {
+    username:"hermione",
+    password: "granger"
+});
+```
+
+### Success Response
+
+Login Success
+
+```
+
+ {
+    "message": "Welcome hermione!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInVzZXJuYW1lIjoiaGVybWlvbmUiLCJpYXQiOjE1NjE0MTU2OTQsImV4cCI6MTU2MjAyMDQ5NH0.rwTCYJ97VA7IvxT0D2uwY3yHljUr0EPNlKQv-P8HloQ",
+    "userID": 33
+}
+```
+
+### Error Response
+
+Error Example:
+
+```
+ERROR 401
+{
+    "status": 401,
+    "message": "Username or password is incorrect"
+}
+```
 
 
 ### Todos
