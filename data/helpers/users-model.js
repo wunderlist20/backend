@@ -21,6 +21,13 @@ async function findById(id) {
       return user;
 }
 
+async function findByUser(username) {
+    const user = await db("users")
+        .where({ username })
+        .first()
+    return user;
+}
+
 async function create(item) {
     const [id] = await db("users")
         .insert(item)

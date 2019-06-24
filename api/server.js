@@ -3,6 +3,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const todosRouter = require('../routers/todosRouter.js');
+const authRouter = require('../routers/authRouter.js');
 
 const server = express();
 
@@ -11,6 +12,7 @@ server.use(express.json());
 server.use(cors());
 
 server.use('/api/todos', todosRouter);
+server.use('/api/auth', authRouter);
 
 //server test
 server.get('/', async (req, res) => {
