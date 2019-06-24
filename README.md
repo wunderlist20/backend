@@ -95,7 +95,7 @@ ERROR 500
 Login example:
 
 ```
-axios.post('/api//auth/login', {
+axios.post('/api/auth/login', {
     username:"hermione",
     password: "granger"
 });
