@@ -30,7 +30,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     const todo = req.body;
     try {
-        if (!todo.title || !todo.task || !todo.setDate ) {
+        if (!todo.title || !todo.task || !todo.setDate) {
             res.status(404).json({
                 message: "Your Todo needs a title, task and setDate"
             })

@@ -17,14 +17,13 @@ exports.up = function(knex, Promise) {
             .integer("user_id")
             .unsigned()
             .references("users.id")
-            .notNullable()
             .onDelete("CASCADE")
             .onUpdate("CASCADE");
         table.string("title", 128).notNullable();
         table.string("task", 256).notNullable();
         table.string("notes", 256);
         table.string("setDate").notNullable(); //date reminder
-        table.boolean("completed").notNullable(); //completed y/n
+        table.boolean("completed"); //completed y/n
         table.timestamps(true, true);
 
     })
