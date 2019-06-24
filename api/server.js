@@ -5,6 +5,7 @@ const cors = require('cors');
 const todosRouter = require('../routers/todosRouter.js');
 const authRouter = require('../routers/authRouter.js');
 const usersRouter = require('../routers/usersRouter.js');
+const authorization = require('../routers/authorization.js');
 
 const server = express();
 
@@ -14,7 +15,7 @@ server.use(cors());
 
 server.use('/api/todos', todosRouter);
 server.use('/api/auth', authRouter);
-server.use('/api/users', usersRouter);
+server.use('/api/users', authorization, usersRouter);
 
 
 //server test

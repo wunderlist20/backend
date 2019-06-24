@@ -22,7 +22,7 @@ DEL https://wunderlist-02.herokuapp.com/api/todos/:id will delete the todo at th
 
 PUT https://wunderlist-02.herokuapp.com/api/todos/:id will edit the todo at this ID, and return the edited object.
 
-Users (protected route) allows a user to view, edit or delete their profile
+Users (protected route, requires login) allows a user to view, edit or delete their profile
 
 GET  api/users/:id
 
