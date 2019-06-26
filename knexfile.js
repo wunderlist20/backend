@@ -1,11 +1,3 @@
-const localPgConnection = {
-  host: 'localhost',
-  database: 'wunderlist',
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS
-};
-
-const dbConnection = process.env.DATABASE_URL || localPgConnection;
 module.exports = {
 
   development: {
@@ -43,7 +35,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: dbConnection + '?ssl=true',
+    connection: process.env.DATABASE_URL + '?ssl=true',
     pool: {
       min: 2,
       max: 10
