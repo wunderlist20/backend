@@ -44,10 +44,10 @@ Register example:
 
 ```
 axios.post('/api/auth/register', {
-    "username": "hermione",
-	"password": "granger",
-	"firstName": "hermione",
- 	"lastName" : "granger"
+    "username": "harry",
+	"password": "potter",
+	"firstName": "harry",
+ 	"lastName" : "potter"
 });
 ```
 
@@ -58,8 +58,8 @@ Register Success
 ```
 
  {
-    "message": "Welcome hermione!",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInVzZXJuYW1lIjoiaGVybWlvbmUiLCJpYXQiOjE1NjE0MTU1ODQsImV4cCI6MTU2MjAyMDM4NH0.LQLEDiljVklxF4gZOyNlLJ6SZuM7509Ko5rK_Ql2X4w",
+    "message": "Welcome harry!",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzMsInVzZXJuYW1lIjoiaGFycnkiLCJpYXQiOjE1NjE1NzIzMTksImV4cCI6MTU2MjE3NzExOX0.VCaGen64x_WEkVueJof8XKZxOImjxK09tNN6tiYSZZw",
     "userID": 33
 }
 ```
@@ -72,7 +72,7 @@ Error Example:
 ERROR 500
 {
     "status": 500,
-    "message": "Your use could not be created ${error}."
+    "message": "Your user could not be created ${error}."
 }
 ```
 
