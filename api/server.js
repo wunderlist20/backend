@@ -20,7 +20,7 @@ server.use('/api/users', authorization, usersRouter); //user profile (view, edit
 
 //server test
 server.get('/', async (req, res) => {
-    res.send(`Welcome to the Wunderlist 2.0 API. Local to production is NOW working!`)
+    res.send(`Welcome to the Wunderlist 2.0 API. Local to production testing!`)
 });
 
 
