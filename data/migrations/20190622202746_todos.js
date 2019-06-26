@@ -21,7 +21,7 @@ exports.up = function(knex, Promise) {
             .onUpdate("CASCADE");
         table.string("title", 128).notNullable();
         table.string("task", 256).notNullable();
-        table.string("notes", 256);
+        table.string("notes", 600);
         table.string("setDate").notNullable(); //date reminder
         table.boolean("completed"); //completed y/n
         table.timestamps(true, true);
