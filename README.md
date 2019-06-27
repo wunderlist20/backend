@@ -153,29 +153,28 @@ ERROR 401
 }
 ```
 
+## Other Routes:
 
-### Todos
-(protected route, requires login)
+## Todos ### (protected route, requires login)
 
-**GET** https://wunderlist-02.herokuapp.com/api/todos/ will return an array of todos.
+**GET** `https://wunderlist-02.herokuapp.com/api/todos/` will return an array of todos.
 
-**GET** https://wunderlist-02.herokuapp.com/api/todos/:id will return an object corresponding to the todo at that ID.
+**GET** `https://wunderlist-02.herokuapp.com/api/todos/:id` will return an object corresponding to the todo at that ID.
 
-**POST** https://wunderlist-02.herokuapp.com/api/todos/ will add a new todo, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
+**POST** `https://wunderlist-02.herokuapp.com/api/todos/` will add a new todo, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
 
-**DEL** https://wunderlist-02.herokuapp.com/api/todos/:id will delete the todo at this ID, and return the deleted object.
+**DEL** `https://wunderlist-02.herokuapp.com/api/todos/:id` will delete the todo at this ID, and return the deleted object.
 
-**PUT** https://wunderlist-02.herokuapp.com/api/todos/:id will edit the todo at this ID, and return the edited object.
+**PUT** `https://wunderlist-02.herokuapp.com/api/todos/:id` will edit the todo at this ID, and return the edited object.
 
 
-### Users
-(protected route, requires login)
+## Users ### (protected route, requires login)
 
-GET  https://wunderlist-02.herokuapp.com/api/users/:id allows a user to view their specific profile by id
+GET  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to view their specific profile by id
 
-PUT  https://wunderlist-02.herokuapp.com/api/users/:id allows a user to edit their specific profile
+PUT  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to edit their specific profile
 
-DELETE https://wunderlist-02.herokuapp.com/api/users/:id allows a user to delete their specific profile
+DELETE `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to delete their specific profile
 
 
 **If you are running the project locally, every endpoint here is the same, but the heroku URL is replaced with `http://localhost:4000/`. For example, `GET` `http://localhost:4000/api/todos` will return an array of todos.**
