@@ -1,5 +1,7 @@
 # wunderlist-backend
 
+Deployed on Heroku with a PosgresSQL database 
+
 ## Dependencies Used
 
 - Node
@@ -19,11 +21,35 @@
 - Jest (Development)
 - Supertest (Development)
 
-## Endpoints
+## Getting Started
+Install dependencies
 
-### Log In and Registration
+ yarn install
 
-## Register a new user.
+Run database migrations
+
+ yarn knex migrate:latest
+
+Run database seeds
+
+ yarn knex seed:run
+
+Run tests
+
+ yarn test
+
+Run the server
+
+ yarn server
+
+## Restrictions
+If you would like to make a request to the todos or users endpoint, a valid JSON web token is required in your request headers.authorization. This token is acquired by successfully registering an account or logging in. Also, for testing to run successfully you will have to remove the authentication piece of middleware from the todos route in the server.js file.
+
+# Endpoints
+
+## Log In and Registration
+
+### Register a new user.
 
     POST /api/auth/register
     
