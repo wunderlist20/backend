@@ -2,6 +2,24 @@
 
 Deployed on Heroku with a PosgresSQL database 
 
+## Description
+
+This project is a RESTful API built using Node and Express. The purpose of this project is to provide a Backend for a Wunderlist 2.0 web application. User registration, login, todo creation, deletion, fetching, or editing, are all handled here. This project was deployed on `Heroku`.
+
+- The server is run using Node.
+- Express is a minimalist Node web application framework for building APIs.
+- PostgreSQL is the database used for production. SQLite3 was used for development and testing.
+- Knex is a SQL query builder for JavaScript.
+- Knex Cleaner is a Knex dependency for cleaning up seed data.
+- Jsonwebtoken is used for authenticating users.
+- Bcrypt is used for hashing passwords.
+- Helmet adds a base layer of security by hiding basic info about the API when interacting with it.
+- Dotenv allows the server to interact with environment variables.
+- Cors is a dependency used to allow Cross Origin Resource Sharing. This allows the Frontend client to interact with the Backend.
+- Cross-env allows the developer to set environment variables in a script.
+- Jest is the library used for writing tests.
+- Supertest is the dependency used for making "requests" in jest tests.
+
 ## Dependencies Used
 
 - Node
@@ -115,7 +133,9 @@ ERROR 500
 | password | String | <p>Users password</p>      |
 
 
+
 **POST** `https://wunderlist-02.herokuapp.com/api/auth/login` will log the user in, and send back a token. Username and password required.
+
 
 ### Examples
 
@@ -156,7 +176,7 @@ ERROR 401
 ## Other Routes:
 
 ## Todos 
-### (protected route, requires login)
+### (protected route, requires login/token)
 
 **GET** `https://wunderlist-02.herokuapp.com/api/todos/` will return an array of todos.
 
@@ -170,7 +190,7 @@ ERROR 401
 
 
 ## Users 
-### (protected route, requires login)
+### (protected route, requires login/token)
 
 GET  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to view their specific profile by id
 
