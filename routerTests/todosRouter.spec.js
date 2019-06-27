@@ -166,4 +166,64 @@ describe("DEL /todos/:id", () => {
       expect(response.status).toBe(404);
     });
   });
+describe("PUT /books/:id", () => {
+    it('should return status code 200 OK', async () => {
+        const post = {
+            "user_id": 1,
+            "title": "Jewelery",
+            "task": "Ergonomic Rubber Sausages",
+            "notes": "Quam sapiente natus ut ut cum. Voluptate esse modi. Voluptatum laboriosam nulla molestiae aperiam. Eius dolores rerum quas. Error est facere deleniti numquam non molestiae. Ut qui quos inventore dolorem ducimus sunt et dolorem blanditiis.",
+            "setDate": "Tuesday",
+            "completed": 0,
+        };
+        await request(server)
+            .post("/api/todos")
+            .send(post);
+        const response = await request(server)
+            .put("/api/todos/1")
+            .send({ title: "Awesome EDIT" });
+        expect(response.status).toBe(200);
+    });
+    it('should return json', async () => {
+        const post = {
+            "user_id": 1,
+            "title": "Jewelery",
+            "task": "Ergonomic Rubber Sausages",
+            "notes": "Quam sapiente natus ut ut cum. Voluptate esse modi. Voluptatum laboriosam nulla molestiae aperiam. Eius dolores rerum quas. Error est facere deleniti numquam non molestiae. Ut qui quos inventore dolorem ducimus sunt et dolorem blanditiis.",
+            "setDate": "Tuesday",
+            "completed": 0,
+        };
+        await request(server)
+            .post("/api/todos")
+            .send(post);
+        const response = await request(server)
+            .put("/api/todos/1")
+            .send({ title: "Awesome EDIT" });
+        expect(response.type).toBe("application/json");
+    });
+    it('should return edited object', async () => {
+        const post = {
+            "user_id": 1,
+            "title": "Jewelery",
+            "task": "Ergonomic Rubber Sausages",
+            "notes": "Quam sapiente natus ut ut cum. Voluptate esse modi. Voluptatum laboriosam nulla molestiae aperiam. Eius dolores rerum quas. Error est facere deleniti numquam non molestiae. Ut qui quos inventore dolorem ducimus sunt et dolorem blanditiis.",
+            "setDate": "Tuesday",
+            "completed": 0,
+        };
+        await request(server)
+            .post("/api/todos")
+            .send(post);
+        const response = await request(server)
+            .put("/api/todos/1")
+            .send({ title: "Awesome EDIT"});
+        expect(response.body.title).toBe("Awesome EDIT");
+    });
+    it('should return status code 404 if object does not exist', async () => {
+        const response = await request(server)
+            .put("/api/todos/10")
+            .send({ title: "Awesome EDIT" });
+        expect(response.status).toBe(404)
+    });
+})
+
 });
