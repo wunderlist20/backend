@@ -63,7 +63,7 @@ If you would like to make a request to the todos or users endpoint, a valid JSON
 | firstName  | String | <p>Users firstName </p>                                    |
 | lastName   | String | <p>Users lastName </p>
 
-**POST** https://wunderlist-02.herokuapp.com/api/auth/register will create a new user and send back a token. Username, password, firstName, lastName are required fields.
+**POST** `https://wunderlist-02.herokuapp.com/api/auth/register` will create a new user and send back a token. Username, password, firstName, lastName are required fields.
 
 ## Examples
 
@@ -115,7 +115,7 @@ ERROR 500
 | password | String | <p>Users password</p>      |
 
 
-**POST** https://wunderlist-02.herokuapp.com/api/auth/login will log the user in, and send back a token. Username and password required.
+**POST** `https://wunderlist-02.herokuapp.com/api/auth/login` will log the user in, and send back a token. Username and password required.
 
 ### Examples
 
@@ -155,7 +155,8 @@ ERROR 401
 
 ## Other Routes:
 
-## Todos ### (protected route, requires login)
+## Todos 
+### (protected route, requires login)
 
 **GET** `https://wunderlist-02.herokuapp.com/api/todos/` will return an array of todos.
 
@@ -168,7 +169,8 @@ ERROR 401
 **PUT** `https://wunderlist-02.herokuapp.com/api/todos/:id` will edit the todo at this ID, and return the edited object.
 
 
-## Users ### (protected route, requires login)
+## Users 
+### (protected route, requires login)
 
 GET  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to view their specific profile by id
 
