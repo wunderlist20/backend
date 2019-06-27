@@ -1,6 +1,6 @@
 # wunderlist-backend
 
-Deployed on Heroku with a PosgresSQL database 
+Deployed on Heroku with a PosgresSQL database https://wunderlist-02.herokuapp.com/
 
 ## Description
 
