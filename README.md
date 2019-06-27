@@ -1,5 +1,25 @@
 # wunderlist-backend
 
+Deployed on Heroku with a PosgresSQL database 
+
+## Description
+
+This project is a RESTful API built using Node and Express. The purpose of this project is to provide a Backend for a Wunderlist 2.0 web application. User registration, login, todo creation, deletion, fetching, or editing, are all handled here. This project was deployed on `Heroku`.
+
+- The server is run using Node.
+- Express is a minimalist Node web application framework for building APIs.
+- PostgreSQL is the database used for production. SQLite3 was used for development and testing.
+- Knex is a SQL query builder for JavaScript.
+- Knex Cleaner is a Knex dependency for cleaning up seed data.
+- Jsonwebtoken is used for authenticating users.
+- Bcrypt is used for hashing passwords.
+- Helmet adds a base layer of security by hiding basic info about the API when interacting with it.
+- Dotenv allows the server to interact with environment variables.
+- Cors is a dependency used to allow Cross Origin Resource Sharing. This allows the Frontend client to interact with the Backend.
+- Cross-env allows the developer to set environment variables in a script.
+- Jest is the library used for writing tests.
+- Supertest is the dependency used for making "requests" in jest tests.
+
 ## Dependencies Used
 
 - Node
@@ -19,11 +39,36 @@
 - Jest (Development)
 - Supertest (Development)
 
-## Endpoints
+## Getting Started
+Install dependencies
+```
+yarn install
+```
+Run database migrations
+```
+yarn knex migrate:latest
+```
+Run database seeds
+```
+yarn knex seed:run
+```
+Run tests
+```
+yarn test
+```
+Run the server
+```
+yarn server
+```
 
-### Log In and Registration
+## Restrictions
+If you would like to make a request to the todos or users endpoint, a valid JSON web token is required in your request headers.authorization. This token is acquired by successfully registering an account or logging in. Also, for testing to run successfully you will have to remove the authentication piece of middleware from the todos route in the server.js file.
 
-## Register a new user.
+# Endpoints
+
+## Log In and Registration
+
+### Register a new user.
 
     POST /api/auth/register
     
@@ -36,7 +81,7 @@
 | firstName  | String | <p>Users firstName </p>                                    |
 | lastName   | String | <p>Users lastName </p>
 
-**POST** https://wunderlist-02.herokuapp.com/api/auth/register will create a new user and send back a token. Username, password, firstName, lastName are required fields.
+**POST** `https://wunderlist-02.herokuapp.com/api/auth/register` will create a new user and send back a token. Username, password, firstName, lastName are required fields.
 
 ## Examples
 
@@ -88,7 +133,9 @@ ERROR 500
 | password | String | <p>Users password</p>      |
 
 
-**POST** https://wunderlist-02.herokuapp.com/api/auth/login will log the user in, and send back a token. Username and password required.
+
+**POST** `https://wunderlist-02.herokuapp.com/api/auth/login` will log the user in, and send back a token. Username and password required.
+
 
 ### Examples
 
@@ -126,29 +173,30 @@ ERROR 401
 }
 ```
 
+## Other Routes:
 
-### Todos
-(protected route, requires login)
+## Todos 
+### (protected route, requires login/token)
 
-**GET** https://wunderlist-02.herokuapp.com/api/todos/ will return an array of todos.
+**GET** `https://wunderlist-02.herokuapp.com/api/todos/` will return an array of todos.
 
-**GET** https://wunderlist-02.herokuapp.com/api/todos/:id will return an object corresponding to the todo at that ID.
+**GET** `https://wunderlist-02.herokuapp.com/api/todos/:id` will return an object corresponding to the todo at that ID.
 
-**POST** https://wunderlist-02.herokuapp.com/api/todos/ will add a new todo, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
+**POST** `https://wunderlist-02.herokuapp.com/api/todos/` will add a new todo, and return the created object. title, task and setDate are required fields. user_id, notes, and completed are optional fields.
 
-**DEL** https://wunderlist-02.herokuapp.com/api/todos/:id will delete the todo at this ID, and return the deleted object.
+**DEL** `https://wunderlist-02.herokuapp.com/api/todos/:id` will delete the todo at this ID, and return the deleted object.
 
-**PUT** https://wunderlist-02.herokuapp.com/api/todos/:id will edit the todo at this ID, and return the edited object.
+**PUT** `https://wunderlist-02.herokuapp.com/api/todos/:id` will edit the todo at this ID, and return the edited object.
 
 
-### Users
-(protected route, requires login)
+## Users 
+### (protected route, requires login/token)
 
-GET  https://wunderlist-02.herokuapp.com/api/users/:id allows a user to view their specific profile by id
+GET  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to view their specific profile by id
 
-PUT  https://wunderlist-02.herokuapp.com/api/users/:id allows a user to edit their specific profile
+PUT  `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to edit their specific profile
 
-DELETE https://wunderlist-02.herokuapp.com/api/users/:id allows a user to delete their specific profile
+DELETE `https://wunderlist-02.herokuapp.com/api/users/:id` allows a user to delete their specific profile
 
 
 **If you are running the project locally, every endpoint here is the same, but the heroku URL is replaced with `http://localhost:4000/`. For example, `GET` `http://localhost:4000/api/todos` will return an array of todos.**
